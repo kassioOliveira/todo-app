@@ -1,0 +1,149 @@
+.App {
+  width: 100vw;
+  height: 100vh;
+}
+
+.wrapper {
+  height: calc(100vh - 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 20px;
+  align-items: center;
+  position: relative;
+}
+
+.form {
+  position: absolute;
+  top: -20px;
+  width: 60%;
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form > input {
+  width: 80%;
+  height: 100%;
+  border: none;
+  outline: none;
+  box-shadow: 0000;
+  border: 1px solid var(--gray-500);
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--gray-100);
+  font-size: 0.85rem;
+}
+
+.form button {
+  border: none;
+  border-radius: 8px;
+  padding: 4px;
+  color: var(--gray-100);
+  background: var(--blueDark);
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+
+.form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.taskContainer {
+  width: 100%;
+  height: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview {
+  width: 60%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.overview strong {
+  color: var(--blue);
+}
+
+.overview .tasksCreated::after {
+  content: attr(data-count);
+  border-radius: 8px;
+  margin-left: 5px;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+  background-color: var(--gray-300);
+  color: var(--gray-100);
+}
+
+.overview .completed::after {
+  content: attr(data-count);
+  border-radius: 8px;
+  margin-left: 5px;
+  padding: 2px 5px;
+  font-size: 0.7rem;
+  background-color: var(--gray-300);
+  color: var(--gray-100);
+}
+
+.section {
+  width: 100%;
+  height: calc(100% - 30px);
+  overflow: auto;
+}
+
+.section::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+}
+
+.section::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--gray-400);
+}
+
+@media (max-width: 768px) {
+  .form {
+    width: 85%;
+  }
+  .form button {
+    padding: 2px 5px;
+    font-size: 0.8rem;
+  }
+  .taskContainer {
+    width: 100%;
+  }
+  .overview {
+    width: 85%;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .form {
+    align-items: center;
+  }
+
+  .form input {
+    width: 75%;
+    height: 35px;
+  }
+
+  .form button {
+    padding: 0px 3px;
+    height: 35px;
+  }
+
+  .overview {
+    width: 85%;
+    font-size: 0.7rem;
+  }
+}
