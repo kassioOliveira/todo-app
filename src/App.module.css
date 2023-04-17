@@ -47,7 +47,6 @@
   gap: 5px;
 }
 
-
 .form button:disabled {
   opacity: 0.7;
   cursor: not-allowed;
@@ -130,6 +129,7 @@
 @media (max-width: 375px) {
   .form {
     align-items: center;
+    gap: 3px;
   }
 
   .form input {
