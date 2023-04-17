@@ -1,0 +1,90 @@
+.card {
+  border: 1px solid var(--gray-500);
+  width: 60%;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  margin: 10px auto;
+}
+
+.notChecked {
+  color: var(--gray-100);
+  text-align: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 70%;
+}
+
+.checked {
+  text-align: center;
+  color: var(--gray-300);
+  text-decoration: line-through;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 70%;
+}
+
+.circle {
+  position: relative;
+  width: 30px;
+}
+
+.circle label {
+  background-color: transparent;
+  border: 1px solid var(--blue);
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+  margin-left: 3px;
+}
+
+.circle label:after {
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  left: 7px;
+  opacity: 0;
+  position: absolute;
+  top: 6px;
+  transform: rotate(-45deg);
+  width: 10px;
+}
+
+.circle input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.circle input[type="checkbox"]:checked + label {
+  background-color: var(--blue);
+  border-color: var(--blue);
+}
+
+.circle input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+
+.trash {
+  color: var(--gray-300);
+  margin-right: 3px;
+  cursor: pointer;
+}
+
+.trash:hover {
+  color: var(--danger);
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 85%;
+  }
+}
